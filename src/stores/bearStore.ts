@@ -6,7 +6,7 @@ type TBearStoreState = {
   removeAllBears: () => void;
 }
 
-const useBearStore = create<TBearStoreState>()((set) => ({
+export const useBearStore = create<TBearStoreState>()((set) => ({
   bears: 0,
   increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
   removeAllBears: () => set ({ bears: 0 }),
