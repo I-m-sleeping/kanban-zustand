@@ -5,6 +5,7 @@ const CatBox = () => {
     cats: { bigCats, smallCats },
     increaseBigCats,
     increaseSmallCats,
+    summary,
   } = useCatStore();
 
   return (
@@ -12,6 +13,7 @@ const CatBox = () => {
       <h1>Cat Box</h1>
       <p>big cats: {bigCats}</p>
       <p>small cats: {smallCats}</p>
+      <p>Total cats: {summary()}</p>
       <p>{Math.random()}</p>
       <div>
         <button onClick={increaseBigCats}>add big cats</button>
