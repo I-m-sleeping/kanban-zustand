@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { immer } from "zustand/middleware/immer";
 
 type TCatStoreState = {
   cats: {
@@ -9,30 +10,25 @@ type TCatStoreState = {
   increaseSmallCats: () => void;
 };
 
-export const useCatStore = create<TCatStoreState>()((
-  set => ({
+export const useCatStore = create<TCatStoreState>()(
+  immer((set) => ({
     cats: {
       bigCats: 0,
       smallCats: 0
     },
     increaseBigCats: ()=>{
       set(
-        (state) => ({
-          cats: {
-            ...state.cats,
-            bigCats: state.cats.bigCats + 1
-          }
-        })
+        (state) => {
+          state.cats.bigCats++;
+        }
       )
     },
     increaseSmallCats: () => {
       set(
-        (state) => ({
-          cats: {
-            ...state.cats,
-            smallCats: state.cats.smallCats + 1
-          }
-        })
+        (state) => {
+          state.cats.smallCats++;
+          return state;
+        }
       )
     }
   })
