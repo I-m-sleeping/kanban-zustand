@@ -1,4 +1,4 @@
-https://www.youtube.com/watch?v=OpvGiudUgXs&list=PL1T-3Hf9FqXbH54aLLMWMpdn6OMa5TWOX
+[https://www.youtube.com/watch?v=OpvGiudUgXs&list=PL1T-3Hf9FqXbH54aLLMWMpdn6OMa5TWOX](https://www.youtube.com/playlist?list=PL1T-3Hf9FqXbH54aLLMWMpdn6OMa5TWOX)
 
 # React + TypeScript + Vite
 
