@@ -14,5 +14,6 @@ export const useBearStore = create<TBearStoreState>()(
     removeAllBears: () => set ({ bears: 0 }),
   }), {
     enabled: true, // false dont use devtools
+    name: "bear store",
   })
 )
