@@ -14,6 +14,7 @@ const BearBox = () => {
       <div>
         <button onClick={increasePopulation}>Add bear</button>
         <button onClick={removeAllBears}>Remove all bears</button>
+        <button onClick={useBearStore.persist.clearStorage}>Clear storage</button>
       </div>
     </div>
   )
