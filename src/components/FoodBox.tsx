@@ -1,14 +1,17 @@
 import { useFoodStore } from "../stores/foodStore";
 
 const FoodBox = () => {
-    const { fish, addOneFish, removeOneFish, removeAllFish } = useFoodStore();
+    const { addOneFish, removeOneFish, removeAllFish } = useFoodStore();
 
+    //const fish = useFoodStore((state) => state.fish);
+    const fish = useFoodStore.getState().fish;
+    
     const add5Fish = () => {
       useFoodStore.setState((state) => ({
         fish: state.fish + 5,
       }));
     };
-    
+
   return (
     <div className="box">
       <h1>Food Box</h1>
