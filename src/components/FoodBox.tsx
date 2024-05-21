@@ -1,11 +1,9 @@
-import { useFoodStore } from "../stores/foodStore";
+import { addOneFish, removeAllFish, removeOneFish, useFoodStore } from "../stores/foodStore";
 
 const FoodBox = () => {
-    const { addOneFish, removeOneFish, removeAllFish } = useFoodStore();
-
     //const fish = useFoodStore((state) => state.fish);
     const fish = useFoodStore.getState().fish;
-    
+
     const add5Fish = () => {
       useFoodStore.setState((state) => ({
         fish: state.fish + 5,
@@ -16,6 +14,7 @@ const FoodBox = () => {
     <div className="box">
       <h1>Food Box</h1>
       <p>fish: {fish}</p>
+      <p>{Math.random()}</p>
       <div>
         <button onClick={addOneFish}>add one fish</button>
         <button onClick={removeOneFish}>remove one fish</button>
