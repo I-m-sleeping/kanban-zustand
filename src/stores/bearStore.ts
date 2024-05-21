@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { devtools } from "zustand/middleware";
+import { persist } from "zustand/middleware";
 
 type TBearStoreState = {
   bears: number;
@@ -8,12 +8,11 @@ type TBearStoreState = {
 }
 
 export const useBearStore = create<TBearStoreState>()(
-  devtools((set) => ({
+  persist((set) => ({
     bears: 0,
     increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
     removeAllBears: () => set ({ bears: 0 }),
-  }), {
-    enabled: true, // false dont use devtools
-    name: "bear store",
+  }),{
+    name: "bears store",
   })
 )
