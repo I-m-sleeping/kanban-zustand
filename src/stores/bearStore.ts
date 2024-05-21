@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 type TBearStoreState = {
   bears: number;
@@ -14,5 +14,6 @@ export const useBearStore = create<TBearStoreState>()(
     removeAllBears: () => set ({ bears: 0 }),
   }),{
     name: "bears store",
+    storage: createJSONStorage(() => sessionStorage),
   })
 )
