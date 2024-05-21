@@ -1,12 +1,10 @@
 import { create } from "zustand";
 
-type TFoodStoreState = {
-  fish: number;
+const initialFoodValue = {
+  fish: 0,
 };
 
-export const useFoodStore = create<TFoodStoreState>()((set) => ({
-  fish: 0,
-}))
+export const useFoodStore = create<typeof initialFoodValue>()(() => initialFoodValue)
 
 export const addOneFish =()=> useFoodStore.setState((state) => ({ fish: state.fish + 1}));
 export const removeOneFish =()=> useFoodStore.setState((state) => ({ fish: state.fish - 1}));

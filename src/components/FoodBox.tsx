@@ -1,8 +1,8 @@
 import { addOneFish, removeAllFish, removeOneFish, useFoodStore } from "../stores/foodStore";
 
 const FoodBox = () => {
-    //const fish = useFoodStore((state) => state.fish);
-    const fish = useFoodStore.getState().fish;
+    const fish = useFoodStore((state) => state.fish);
+    //const fish = useFoodStore.getState().fish;
 
     const add5Fish = () => {
       useFoodStore.setState((state) => ({
